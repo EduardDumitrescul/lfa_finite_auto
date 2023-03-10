@@ -3,4 +3,4 @@ project(lfa_finite_auto)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(lfa_finite_auto main.cpp)
+add_executable(lfa_finite_auto main.cpp DFA.cpp DFA.h)
