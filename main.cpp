@@ -6,6 +6,7 @@
 void testDFA() {
     DFA dfa;
     dfa.readFromFile("../testfiles/dfa.in");
+    std::cout << dfa;
     std::ifstream fin("../testfiles/words.txt");
     int words;
     fin >> words;
@@ -20,13 +21,17 @@ void testDFA() {
 void testNFA() {
     NFA nfa;
     nfa.readFromFile("../testfiles/nfa.in");
+    std::cout << nfa;
     std::ifstream fin("../testfiles/words.txt");
+
+
+    DFA dfa = nfa.asDFA();
     int words;
     fin >> words;
     while(words--) {
         std::string word;
         fin >> word;
-        std::cout << word << ' ' << nfa.checkWord(word) << '\n';
+        std::cout << word << ' ' << dfa.checkWord(word) << '\n';
     }
     fin.close();
 }

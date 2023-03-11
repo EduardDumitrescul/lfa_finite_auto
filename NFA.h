@@ -7,6 +7,7 @@
 
 #include <unordered_map>
 #include <vector>
+#include "DFA.h"
 
 
 class NFA {
@@ -21,7 +22,11 @@ public:
 
     void readFromFile(const std::string& inputFilename);
 
+    friend std::ostream &operator <<(std::ostream &out, const NFA& object);
+
     bool checkWord(const std::string &word);
+
+    DFA asDFA();
 };
 
 

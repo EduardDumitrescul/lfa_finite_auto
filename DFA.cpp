@@ -42,3 +42,33 @@ void DFA::readFromFile(const std::string& inputFilename) {
         this->addTransition(src, letter, dest);
     }
 }
+
+void DFA::setFinalState(int state, bool final) {
+    this->isFinal[state] = final;
+}
+
+DFA &DFA::operator=(const DFA &object) {
+    if(this != &object) {
+        this->startingState = object.startingState;
+        for(char letter = 'a'; letter <= 'z'; letter ++)
+            this->transitions[letter] = object.transitions[letter];
+        this->isFinal = object.isFinal;
+    }
+    return *this;
+}
+
+std::ostream &operator<<(std::ostream &out, const DFA &object) {
+    out << "Starting State: " << object.startingState << '\n';
+    out << "Final States: ";
+    for(auto it: object.isFinal) {
+        if(it.second)
+            out << it.first << ' ';
+    }
+    out << '\n';
+    for(char letter='a'; letter <= 'z'; letter ++) {
+        for(const auto& it: object.transitions[letter]) {
+            out << it.first << ' ' << letter << ' ' << it.second << '\n';
+        }
+    }
+    return out;
+}

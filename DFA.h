@@ -19,11 +19,17 @@ class DFA {
 public:
     DFA(int startingState=0);
 
+    DFA& operator=(const DFA& object);
+
     void addTransition(int source, char letter, int destination) ;
 
     void readFromFile(const std::string& inputFilename);
 
     bool checkWord(const std::string &word);
+
+    void setFinalState(int state, bool final = true);
+
+    friend std::ostream& operator <<(std::ostream &out, const DFA& dfa);
 };
 
 
