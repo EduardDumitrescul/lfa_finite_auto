@@ -21,7 +21,7 @@ public:
 
     void addTransition(int source, char letter, int destination) ;
 
-    void runFromFile(const std::string& inputFilename, const std::string& outputFilename);
+    void readFromFile(const std::string& inputFilename);
 
     bool checkWord(const std::string &word);
 };

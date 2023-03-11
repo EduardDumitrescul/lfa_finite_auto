@@ -24,11 +24,10 @@ bool DFA::checkWord(const std::string &word) {
     return this->isFinal[currentState];
 }
 
-void DFA::runFromFile(const std::string& inputFilename, const std::string& outputFilename) {
+void DFA::readFromFile(const std::string& inputFilename) {
     int states, transCount, wordsCount, finalStates;
     std::ifstream fin(inputFilename);
-    std::ofstream fout(outputFilename);
-    fin >> states >> startingState;
+    fin >> states >> this->startingState;
     fin >> finalStates;
     while(finalStates --) {
         int fState;
@@ -41,11 +40,5 @@ void DFA::runFromFile(const std::string& inputFilename, const std::string& outpu
         int src, dest;
         fin >> src >> letter >> dest;
         this->addTransition(src, letter, dest);
-    }
-    fin >> wordsCount;
-    while(wordsCount--) {
-        std::string word;
-        fin >> word;
-        fout << word << ' ' << this->checkWord(word) << '\n';
     }
 }
