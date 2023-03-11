@@ -61,6 +61,12 @@ build CMakeFiles/lfa_finite_auto.dir/DFA.cpp.o: CXX_COMPILER__lfa_finite_auto_De
   OBJECT_DIR = CMakeFiles/lfa_finite_auto.dir
   OBJECT_FILE_DIR = CMakeFiles/lfa_finite_auto.dir
 
+build CMakeFiles/lfa_finite_auto.dir/NFA.cpp.o: CXX_COMPILER__lfa_finite_auto_Debug /var/home/eduarddumitrescul/repos/lfa-finite-auto/NFA.cpp || cmake_object_order_depends_target_lfa_finite_auto
+  DEP_FILE = CMakeFiles/lfa_finite_auto.dir/NFA.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/lfa_finite_auto.dir
+  OBJECT_FILE_DIR = CMakeFiles/lfa_finite_auto.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target lfa_finite_auto
@@ -69,7 +75,7 @@ build CMakeFiles/lfa_finite_auto.dir/DFA.cpp.o: CXX_COMPILER__lfa_finite_auto_De
 #############################################
 # Link the executable lfa_finite_auto
 
-build lfa_finite_auto: CXX_EXECUTABLE_LINKER__lfa_finite_auto_Debug CMakeFiles/lfa_finite_auto.dir/main.cpp.o CMakeFiles/lfa_finite_auto.dir/DFA.cpp.o
+build lfa_finite_auto: CXX_EXECUTABLE_LINKER__lfa_finite_auto_Debug CMakeFiles/lfa_finite_auto.dir/main.cpp.o CMakeFiles/lfa_finite_auto.dir/DFA.cpp.o CMakeFiles/lfa_finite_auto.dir/NFA.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/lfa_finite_auto.dir
   POST_BUILD = :
