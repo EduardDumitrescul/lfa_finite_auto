@@ -26,12 +26,14 @@ void testNFA() {
 
 
     DFA dfa = nfa.asDFA();
+    std::cout << dfa;
     int words;
     fin >> words;
     while(words--) {
         std::string word;
         fin >> word;
         std::cout << word << ' ' << dfa.checkWord(word) << '\n';
+        std::cout << word << ' ' << nfa.checkWord(word) << '\n';
     }
     fin.close();
 }
